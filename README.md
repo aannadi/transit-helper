@@ -1,3 +1,3 @@
-# python_bart_assignment
-Assignment for Starbutter AI internship applicants.
-Please use python3.
+# transit helper
+Chat bot that takes in queries about BART/bus routes and returns real time answers 
+Technologies: Dialogflow, AWS Lambda, Python
