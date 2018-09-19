@@ -1,0 +1,175 @@
+{
+    "queryResult": {
+        "fulfillmentMessages": [
+            {
+                "platform": "ACTIONS_ON_GOOGLE",
+                "listSelect": {
+                    "items": [
+                        {
+                            "info": {
+                                "synonyms": [
+                                    "Alternatively,"
+                                ],
+                                "key": "Or This Stuff"
+                            },
+                            "image": {},
+                            "description": "Check it out!",
+                            "title": "This Stuff"
+                        },
+                        {
+                            "info": {
+                                "synonyms": [
+                                    "Also Alternatively"
+                                ],
+                                "key": "Also Or This Stuff"
+                            },
+                            "image": {},
+                            "description": "Also Check it Out!",
+                            "title": "Also This Stuff"
+                        }
+                    ],
+                    "title": "Stuff you should do"
+                }
+            },
+            {
+                "text": {
+                    "text": [
+                        "the webhook has failed"
+                    ]
+                }
+            }
+        ],
+        "fulfillmentText": "the webhook has failed",
+        "allRequiredParamsPresent": true,
+        "parameters": {
+            "stop": "College Av & Haste St",
+            "route": "51B"
+        },
+        "languageCode": "en-us",
+        "intentDetectionConfidence": 1,
+        "intent": {
+            "displayName": "NextBus",
+            "name": "projects/error-example/agent/intents/d9843411-dd6d-4196-aebb-f64800fb19d6"
+        },
+        "diagnosticInfo": {
+            "end_conversation": true
+        },
+        "queryText": "when does the next southbound train leave ashby station",
+        "outputContexts": [
+            {
+                "name": "projects/error-example/agent/sessions/1533668042614/contexts/actions_capability_screen_output",
+                "parameters": {
+                    "station": "ashby",
+                    "cardinal": "southbound",
+                    "cardinal.original": "southbound",
+                    "station.original": "ashby"
+                }
+            },
+            {
+                "name": "projects/error-example/agent/sessions/1533668042614/contexts/actions_capability_audio_output",
+                "parameters": {
+                    "station": "ashby",
+                    "cardinal": "southbound",
+                    "cardinal.original": "southbound",
+                    "station.original": "ashby"
+                }
+            },
+            {
+                "name": "projects/error-example/agent/sessions/1533668042614/contexts/google_assistant_input_type_keyboard",
+                "parameters": {
+                    "station": "ashby",
+                    "cardinal": "southbound",
+                    "cardinal.original": "southbound",
+                    "station.original": "ashby"
+                }
+            },
+            {
+                "name": "projects/error-example/agent/sessions/1533668042614/contexts/actions_capability_media_response_audio",
+                "parameters": {
+                    "station": "ashby",
+                    "cardinal": "southbound",
+                    "cardinal.original": "southbound",
+                    "station.original": "ashby"
+                }
+            },
+            {
+                "name": "projects/error-example/agent/sessions/1533668042614/contexts/actions_capability_web_browser",
+                "parameters": {
+                    "station": "ashby",
+                    "cardinal": "southbound",
+                    "cardinal.original": "southbound",
+                    "station.original": "ashby"
+                }
+            }
+        ]
+    },
+    "originalDetectIntentRequest": {
+        "source": "google",
+        "version": "2",
+        "payload": {
+            "inputs": [
+                {
+                    "rawInputs": [
+                        {
+                            "query": "when does the next southbound train leave ashby station",
+                            "inputType": "KEYBOARD"
+                        }
+                    ],
+                    "intent": "actions.intent.TEXT",
+                    "arguments": [
+                        {
+                            "rawText": "when does the next southbound train leave ashby station",
+                            "textValue": "when does the next southbound train leave ashby station",
+                            "name": "text"
+                        }
+                    ]
+                }
+            ],
+            "isInSandbox": true,
+            "requestType": "SIMULATOR",
+            "surface": {
+                "capabilities": [
+                    {
+                        "name": "actions.capability.WEB_BROWSER"
+                    },
+                    {
+                        "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+                    },
+                    {
+                        "name": "actions.capability.AUDIO_OUTPUT"
+                    },
+                    {
+                        "name": "actions.capability.SCREEN_OUTPUT"
+                    }
+                ]
+            },
+            "conversation": {
+                "conversationId": "1533668042614",
+                "type": "ACTIVE",
+                "conversationToken": "[]"
+            },
+            "availableSurfaces": [
+                {
+                    "capabilities": [
+                        {
+                            "name": "actions.capability.WEB_BROWSER"
+                        },
+                        {
+                            "name": "actions.capability.AUDIO_OUTPUT"
+                        },
+                        {
+                            "name": "actions.capability.SCREEN_OUTPUT"
+                        }
+                    ]
+                }
+            ],
+            "user": {
+                "locale": "en-US",
+                "userId": "ABwppHFQpqfM5COtIQ0M97wooTRi0YBprW6yApM670r5iCVK5nQ_mcJ8Wne19xEtpCzSsbciZeucMTUILw",
+                "lastSeen": "2018-08-07T18:52:54Z"
+            }
+        }
+    },
+    "session": "projects/error-example/agent/sessions/1533668042614",
+    "responseId": "08a3fbf7-091d-47f1-a151-3aa262583bf9"
+}
