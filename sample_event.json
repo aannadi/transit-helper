@@ -43,7 +43,8 @@
         "allRequiredParamsPresent": true,
         "parameters": {
             "stop": "College Av & Haste St",
-            "route": "51B"
+            "route": "51B",
+            "direction": "To Rockridge BART"
         },
         "languageCode": "en-us",
         "intentDetectionConfidence": 1,

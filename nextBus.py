@@ -7,8 +7,10 @@ import xml.etree.ElementTree as ET
 def next_bus(event):
     dialog_flow_stop = event["queryResult"]["parameters"]["stop"]
     dialog_flow_route = event["queryResult"]["parameters"]["route"]
+    dialog_flow_direction = event["queryResult"]["parameters"]["direction"]
+
     stop_code = get_stop(dialog_flow_route, dialog_flow_stop)
-    time = get_next_time(stop_code[1], dialog_flow_route)
+    time = get_next_time(stop_code, dialog_flow_route, dialog_flow_direction)
     if time:
         spoken_response = get_spoken_response(dialog_flow_route, dialog_flow_stop, time)
         written_response = get_written_response(dialog_flow_route, dialog_flow_stop, time)
@@ -29,17 +31,21 @@ def get_stop(route, stop):
             codes += [s.attrib['tag']]
     return codes
 
-def get_next_time(stop, route):
-    url = "http://webservices.nextbus.com/service/publicXMLFeed"
-    params = {"command": "predictions", "a": "actransit", "r": route, "s": stop, "useShortTitles": "true"}
-    r = requests.get(url, params = params)
-    root = ET.fromstring(r.text)
-    predictions = root.findall("./predictions/direction/prediction")
-    times = []
-    for p in predictions:
-        times += [int(p.attrib['minutes'])]
-    if times:
-        return min(times)
+def get_next_time(stop_codes, route, direction):
+    for code in stop_codes:
+        url = "http://webservices.nextbus.com/service/publicXMLFeed"
+        params = {"command": "predictions", "a": "actransit", "r": route, "s": code, "useShortTitles": "true"}
+        r = requests.get(url, params = params)
+        root = ET.fromstring(r.text)
+        direct = root.findall("./predictions/direction")
+        if direct[0].attrib['title'] != direction:
+            continue
+        predictions = root.findall("./predictions/direction/prediction")
+        times = []
+        for p in predictions:
+            times += [int(p.attrib['minutes'])]
+        if times:
+            return str(min(times)) + " " + str(code)
     return None
 
 def get_spoken_response(route, stop, time ):

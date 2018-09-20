@@ -13,8 +13,8 @@ def lambda_handler(event: dict, context) -> dict:
     The return format matches that the response format
     https://developers.google.com/actions/build/json/dialogflow-webhook-json#dialogflow-response-body
     Source is always the "BART API"    """
-    event = event['body']
-    event = json.loads(event)
+    # event = event['body']
+    # event = json.loads(event)
     if event["queryResult"]["intent"]["displayName"] == "NextBartTrain":
         return next_bart_train(event)
     elif event["queryResult"]["intent"]["displayName"] == "NextBus":
