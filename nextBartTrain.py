@@ -31,7 +31,10 @@ def next_bart_train(event):
 
     return_object = get_return_object(spoken_response, written_response )
 
-    return return_object
+    return {
+        'statusCode': '200',
+        'body': return_object
+        }
 
 def set_params(dialog_flow_station, dialog_flow_direction):
     params = {}
