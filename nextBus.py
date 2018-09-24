@@ -17,7 +17,10 @@ def next_bus(event):
     else:
         spoken_response = "there are no bus service from that stop right now"
         written_response = "There are no bus service from that stop right now."
-    return return_object(spoken_response, written_response)
+    return  {
+        'statusCode': '200',
+        'body': return_object(spoken_response, written_response)
+        }
 
 def get_stop(route, stop):
     url = "http://webservices.nextbus.com/service/publicXMLFeed"
